@@ -28,9 +28,9 @@ function App() {
     const title = document.getElementsByClassName('title-message2')[0];
     const groupUsers = document.getElementsByClassName('group-users')[0];
     const imageProfileTop = document.getElementsByClassName('image-profile-top')[0];
-    const chatMessagesArea = document.getElementsByClassName('chat-messages-area')[0];
+    //const chatMessagesArea = document.getElementsByClassName('chat-messages-area')[0];
 
-    chatMessagesArea.innerHTML = '';
+    //chatMessagesArea.innerHTML = '';
     groupUsers.innerHTML = '';
     imageProfileTop.src = '';
     title.innerHTML = name;
@@ -160,7 +160,7 @@ function App() {
           </div>
 
           <div className='chat-messages-area'>
-            {messages.map((msg, index) => {
+            {(activeChat? privateMessages : messages).map((msg, index) => {
               const userColor = colors.find((c) => c.name === msg.name)?.color || "000000";
 
               return (
